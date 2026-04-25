@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>DNA LAB — Cyber Biotech</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- WebGL Canvas -->
+<canvas id="dna-canvas"></canvas>
+
+<!-- Grain & Scanlines -->
+<div id="grain"></div>
+<div id="scanline"></div>
+
+<!-- Custom Cursor -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- Corner Brackets -->
+<div class="corner c-tl"></div>
+<div class="corner c-tr"></div>
+<div class="corner c-bl"></div>
+<div class="corner c-br"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">DNA<span>LAB</span></div>
+  <div class="nav-right">
+    <a href="#">Helix</a>
+    <a href="#">Genome</a>
+    <a href="#">Sequence</a>
+  </div>
+</nav>
+
+<!-- HUD: Title (top-left) -->
+<div class="hud-panel" id="hud-title">
+  <h1>Double<br><em>Helix</em><br>Engine</h1>
+  <div class="sep"></div>
+  <p>25,000 partículas en tiempo real.<br>Doble hélice de ADN con física<br>elástica e interacción táctil.</p>
+</div>
+
+<!-- HUD: Stats (top-right) -->
+<div class="hud-panel" id="hud-stats">
+  <div class="stat-block">
+    <div class="stat-num">25<span class="stat-unit">K</span></div>
+    <div class="stat-lbl">Partículas GPU</div>
+  </div>
+  <div class="stat-block">
+    <div class="stat-num">8<span class="stat-unit">T</span></div>
+    <div class="stat-lbl">Giros Hélice</div>
+  </div>
+  <div class="stat-block">
+    <div class="stat-num">60<span class="stat-unit">fps</span></div>
+    <div class="stat-lbl">Render Rate</div>
+  </div>
+</div>
+
+<!-- HUD: Live Data (bottom-left) -->
+<div class="hud-panel" id="hud-data">
+  <div class="data-row">
+    <span class="data-label">G-C Content</span>
+    <span class="data-value" id="data-gc">42.8%</span>
+    <div class="data-bar"><div class="data-bar-fill" style="width:43%"></div></div>
+  </div>
+  <div class="data-row">
+    <span class="data-label">A-T Content</span>
+    <span class="data-value" id="data-at">57.2%</span>
+    <div class="data-bar"><div class="data-bar-fill" style="width:57%"></div></div>
+  </div>
+  <div class="data-row">
+    <span class="data-label">Base Pairs</span>
+    <span class="data-value" id="data-bp">3,200,000,000</span>
+  </div>
+  <div class="data-row">
+    <span class="data-label">Sequence ID</span>
+    <span class="data-value" id="data-seq">0042</span>
+  </div>
+</div>
+
+<!-- HUD: Controls (bottom-right) -->
+<div class="hud-panel" id="hud-controls">
+  <div class="ctrl-row"><span>MOUSE</span>Repulsión radial</div>
+  <div class="ctrl-row"><span>TOUCH</span>Interacción táctil</div>
+  <div class="ctrl-row"><span>AUTO</span>Rotación continua</div>
+  <div class="ctrl-row"><span>GPU</span>ShaderMaterial GLSL</div>
+</div>
+
+<!-- Three.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<!-- Engine -->
+<script src="dna.js"></script>
+</body>
+</html>
